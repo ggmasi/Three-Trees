@@ -1,0 +1,780 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: rgb(255, 255, 255);
+    color: #333;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    padding: 10px ;
+}
+
+header .start{
+    width: 25%; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center
+}
+
+header .mid{width: 50%; display: flex; justify-content: center;}
+header .end{width: 25%;}
+
+header .start a{
+    margin-left: 35px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #964B00;
+    
+}
+
+header .start a:nth-child(1):hover,
+header .start a:nth-child(2):hover{
+    border-bottom: 5px solid #964B00;
+    font-weight: bold;
+}
+
+header .start a:nth-child(3):hover{
+    border-bottom: 5px solid #964B00;
+}
+
+nav{
+    background: rgb(18, 75, 1);
+    
+    
+    
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.links a{
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px;
+    margin-inline: 32px;
+    line-height: 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1.5px;
+    
+
+}
+
+.links a:hover{
+    border-bottom: 5px solid #964B00;
+    font-weight: bold;
+    
+}
+
+
+.top-button{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 30px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #964B00; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 13px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+  
+.top-button:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.top-button #arrow{
+    margin-top: 0px;
+}
+
+/*SLIDER CSS----------------------------------------------------------------------------------*/
+
+.slideshow{
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-item{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    opacity: 0;
+    animation: cycleImages 31s infinite;
+}
+
+.slideshow-item:nth-child(1){
+    animation-delay: 0s;
+}
+
+.slideshow-item:nth-child(2){
+    animation-delay: 10s;
+}
+
+.slideshow-item:nth-child(3){
+    animation-delay: 20s;
+}
+
+.slideshow-item img{
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+
+.slideshow-item-text{
+    max-width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgb(0,0,0,0.8);
+    color: #fff;
+    padding: 5rem 1rem;
+}
+
+.slideshow-item-text h5{
+    font-size: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+
+.slideshow-item-text p{
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    
+}
+
+@keyframes cycleImages{
+    25%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .slideshow-item-text{
+        max-width: 70%;
+        padding: 5rem 1rem;
+    }
+
+    .slideshow-item-text h5{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width:767px){
+    .slideshow-item-text{
+        max-width: 100%;
+        padding: 2rem;
+        top: initial;
+        bottom: 0;
+        transform: initial;
+    }
+
+    .slideshow-item-text h5{
+        font-size: 1.2rem;
+    }
+
+    .slideshow-item-text p{
+        font-size: 0.56rem;
+    }
+}
+
+
+/*SLIDER CSS----------------------------------------------------------------------------------*/
+
+
+/*CONTAINER CSS-------------------------------------------------------------------------------------------------*/
+.container{
+    display: flex;
+    background-color: rgb(178, 240, 166);
+}
+
+.container .text{
+    width: 900px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+
+
+
+/* Style the Image Used to Trigger the Modal */
+#govImg, #indImg, #empImg{
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 15%;
+    margin: 50px;
+}
+  
+.container .imgs{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+#govImg:hover, #indImg:hover, #empImg:hover {opacity: 0.7;}
+  
+/*CONTAINER CSS-----------------------------------------------------------------------------------------------------*/
+
+/*GOV CSS--------------------------------------------------------------------------------------------*/
+
+/* The Modal (background) */
+.gov-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    
+}
+
+.gov-modal-header{
+    padding: 20px 16px;
+    background-color: rgb(178, 240, 166);
+    color: rgb(0, 0, 0);
+}
+
+/* Modal Body */
+.gov-modal-body {padding: 2px 16px;}
+
+
+/* Modal Footer */
+.gov-modal-footer {
+  padding: 20px 16px;
+  background-color: rgb(178, 240, 166);
+  color: rgb(178, 240, 166);
+  
+}
+
+
+
+/* Modal Content (Image) */
+.gov-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: zoom;
+    animation-duration: 0.4s
+}
+  
+.gov-modal-img{
+    display: flex;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: flex-end;
+    border-radius: 100%;
+}
+
+
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#govCaption {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    height: 150px;
+}
+  
+@media only screen and (max-width: 700px){
+.gov-modal-content {
+    width: 100%;
+  }
+}
+
+/*GOV CSS-----------------------------------------------------------------------------------------------*/
+
+/*IND CSS---------------------------------------------------------------------------------*/
+/* The Modal (background) */
+.ind-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    
+}
+
+.ind-modal-header{
+    padding: 20px 16px;
+    background-color: rgb(178, 240, 166);
+    color: rgb(0, 0, 0);
+}
+
+/* Modal Body */
+.ind-modal-body {padding: 2px 16px;}
+
+
+/* Modal Footer */
+.ind-modal-footer {
+  padding: 20px 16px;
+  background-color: rgb(178, 240, 166);
+  color: rgb(178, 240, 166);
+  
+}
+
+
+
+/* Modal Content (Image) */
+.ind-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: zoom;
+    animation-duration: 0.4s
+}
+  
+.ind-modal-img{
+    display: flex;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: flex-end;
+    border-radius: 100%;
+}
+
+
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#indCaption {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    height: 150px;
+}
+  
+@media only screen and (max-width: 700px){
+.ind-modal-content {
+    width: 100%;
+  }
+}
+
+/*IND CSS-----------------------------------------------------------------*/
+
+/*EMP CSS----------------------------------------------------------------------------------*/
+
+.emp-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    
+}
+
+.emp-modal-header{
+    padding: 20px 16px;
+    background-color: rgb(178, 240, 166);
+    color: rgb(0, 0, 0);
+}
+
+/* Modal Body */
+.emp-modal-body {padding: 2px 16px;}
+
+
+/* Modal Footer */
+.emp-modal-footer {
+  padding: 20px 16px;
+  background-color: rgb(178, 240, 166);
+  color: rgb(178, 240, 166);
+  
+}
+
+
+
+/* Modal Content (Image) */
+.emp-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: zoom;
+    animation-duration: 0.4s
+}
+  
+.emp-modal-img{
+    display: flex;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    align-self: flex-end;
+    border-radius: 100%;
+}
+
+
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#empCaption {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    height: 150px;
+}
+  
+@media only screen and (max-width: 700px){
+.emp-modal-content {
+    width: 100%;
+  }
+}
+
+/*EMP CSS----------------------------------------------------------------------------------*/
+
+/*MODAL CSS--------------------------------------------------------------------------------*/
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+  
+/* The Close Button */
+.gov-close, .ind-close, .emp-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #131313;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.gov-close:hover, .gov-close:focus,
+.ind-close:hover, .ind-close:focus,
+.emp-close:hover, .emp-close:focus{
+    cursor: pointer;
+    color: #bbb;
+    text-decoration: none;
+}
+/*MODAL CSS--------------------------------------------------------------------------------*/
+
+/*VIDEO CONTAINER CSS--------------------------------------------------------------------------------*/
+.video-container{
+    display: flex;
+    background-image: url(../img/bg1.png);
+    
+}
+
+video{
+    margin: 25px;
+}
+
+.video-container .start{
+    width: 25%;
+}
+
+.inter{
+    width: 50%;
+}
+
+.text{
+    width: 45%;
+}
+
+.end{
+    width: 10%;
+}
+
+.text h1{
+    text-align: right;
+    margin-right: 0px;
+    margin-top: 70px;
+    color:rgb(18, 75, 1);
+}
+
+.subtext{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.subtext h2{
+    text-align: right;
+}
+
+
+
+/*VIDEO CONTAINER CSS--------------------------------------------------------------------------------*/
+/*CONTATOS CONTAINER CSS ----------------------------------------------------------------*/
+.contatos-container{
+    display: flex;
+    background: rgb(178, 240, 166);
+    padding: 10px 0px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+
+.contatos-container h1{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.contatos-container h3{
+    margin-left: 50px;
+}
+
+
+
+.contatos-container a, .contatos-container h3 span{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.contatos-container .start{
+    width: 25%;
+}
+
+.contatos-container .inter{
+    width: 30%;
+    display: inline-block;
+    
+   
+}
+
+.contatos-container .inter .btn-container{
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.map{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ 
+
+
+.contatos-container .inter form{
+    display: none;
+    margin-left: 3000px;
+    overflow: hidden;
+    
+}
+
+.contatos-container .inter .notify-button{
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 3px;
+    color:#fff;
+	background-color:#964B00;
+    border: 0;
+    border-radius: 10px;
+	padding:10px 20px;
+	text-transform: uppercase;
+	margin-left: 50px;
+	border-radius:2px;
+	cursor:pointer;
+    box-shadow: inset 0px 0px 0 0 rgb(18, 75, 1);
+    transition: ease-in-out 0.5s;
+	
+}
+
+.contatos-container .inter .notify-button:hover{
+    box-shadow: inset -200px 0px 0px 0 rgb(18, 75, 1);
+    
+}
+
+
+.input-container{
+	position: relative;
+	margin-bottom:25px;
+    display: flex;
+    
+    
+}
+.input-container label{
+	position:absolute;
+    
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:rgb(0, 0, 0);	
+    margin-left: 50px;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:75%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:rgb(0, 0, 0);
+  margin-left: 50px;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #964B00;	
+}
+.btn{
+	color:#fff;
+	background-color:#964B00;
+	outline: none;
+    border: 0;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-left:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    box-shadow: inset 0px 0px 0 0 rgb(18, 75, 1);
+    transition: ease-in-out 0.5s;
+}
+
+.btn:hover{
+    box-shadow: inset -100px 0px 0 0 rgb(18, 75, 1);
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+/*CONTATOS CONTAINER CSS ----------------------------------------------------------------*/
+/*FOOTER CSS ----------------------------------------------------------------*/
+footer{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: rgb(58, 0, 0);
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 2px;
+}
+
+footer img{
+    border-radius: 100%;
+    margin-left: 20px;
+}
+
+footer .tt-span{
+    
+    margin-left: 20px;
+}
+
+.partners{
+    width: 33%;
+}
+
+.copyright{
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
+
+footer .credit{
+    width: 33%;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+footer .end{
+    width: 10%;
+}
+
+.footerImg:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .credit a{
+    margin-left: 3px;
+    
+}
+
+footer .credit a:hover{
+    border-bottom: 5px solid rgb(178, 240, 166);
+    font-weight: bold;
+}
+
+/*FOOTER CSS ----------------------------------------------------------------*/
