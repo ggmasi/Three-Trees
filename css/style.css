@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background: rgb(255, 255, 255);
+    color: #333;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    padding: 10px ;
+}
+
+header .start{
+    width: 25%; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center
+}
+
+header .mid{width: 50%; display: flex; justify-content: center;}
+header .end{width: 25%;}
+
+header .start a{
+    margin-left: 35px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #964B00;
+    
+}
+
+header .start a:nth-child(1):hover,
+header .start a:nth-child(2):hover{
+    border-bottom: 5px solid #964B00;
+    font-weight: bold;
+}
+
+header .start a:nth-child(3):hover{
+    border-bottom: 5px solid #964B00;
+}
+
+nav{
+    background: rgb(18, 75, 1);
+    
+    
+    
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.links a{
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px;
+    margin-inline: 32px;
+    line-height: 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 1.5px;
+    
+
+}
+
+.links a:hover{
+    border-bottom: 5px solid #964B00;
+    font-weight: bold;
+    
+}
+
+
+.top-button{
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 30px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #964B00; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 13px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+  
+.top-button:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.top-button #arrow{
+    margin-top: 0px;
+}
+
+/*SLIDER CSS----------------------------------------------------------------------------------*/
+
+.slideshow{
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-item{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    opacity: 0;
+    animation: cycleImages 31s infinite;
+}
+
+.slideshow-item:nth-child(1){
+    animation-delay: 0s;
+}
+
+.slideshow-item:nth-child(2){
+    animation-delay: 10s;
+}
+
+.slideshow-item:nth-child(3){
+    animation-delay: 20s;
+}
+
+.slideshow-item img{
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+
+.slideshow-item-text{
+    max-width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgb(0,0,0,0.8);
+    color: #fff;
+    padding: 5rem 1rem;
+}
+
+.slideshow-item-text h5{
+    font-size: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2.5rem;
+}
+
+.slideshow-item-text p{
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    
+}
+
+@keyframes cycleImages{
+    25%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .slideshow-item-text{
+        max-width: 35%;
+        padding: 5rem 1rem;
+    }
+
+    .slideshow-item-text h5{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width:767px){
+    .slideshow-item-text{
+        max-width: 100%;
+        padding: 2rem;
+        top: initial;
+        bottom: 0;
+        transform: initial;
+    }
+
+    .slideshow-item-text h5{
+        font-size: 1.2rem;
+    }
+
+    .slideshow-item-text p{
+        font-size: 0.56rem;
+    }
+}
+
+
+/*SLIDER CSS----------------------------------------------------------------------------------*/
+
+
+/*CONTAINER CSS-------------------------------------------------------------------------------------------------*/
+.container{
+    display: flex;
+    background-color: rgb(178, 240, 166);
+}
+
+.container .text{
+    width: 900px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    
+    
+}
+
+
+
+
+/* Style the Image Used to Trigger the Modal */
+#govImg, #indImg, #empImg{
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 15%;
+    margin: 50px;
+}
+  
+.container .imgs{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+@media screen and (max-width:1024px){
+    #govImg, #indImg, #empImg{
+        margin: 25px;
+    }
+}
+  
+
+
+/*CONTAINER CSS-----------------------------------------------------------------------------------------------------*/
+
+/*GOV CSS--------------------------------------------------------------------------------------------*/
+
+
+
+.gov{
+    display: none;
+    background-color: rgb(0, 87, 14);
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    color: white;
+}
+
+
+
+
+.gov .title{
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.gov .govIcon{
+    width: 15%;
+    border-radius: 100%;
+    margin-left: 1vh;
+   
+}
+
+.gov .title span{
+    margin-left: 1vh;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intrabody{
+    height: 70%;
+    width: 100%;
+}
+
+.intrabody p{
+    margin: 1.2vh;
+    font-size: 1em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media screen and (max-width:1024px){
+    .gov{
+        width: 200px;
+        height: 133px;
+    }
+
+    .gov .title{
+        height: 30%;
+    }
+
+    .gov .title span{
+        font-size: 0.9em;
+    }
+
+    .gov .intrabody p{
+        margin: 1.2vh;
+        font-size: 0.7em;
+    }
+}
+
+/*GOV CSS-----------------------------------------------------------------------------------------------*/
+
+/*IND CSS---------------------------------------------------------------------------------*/
+.ind{
+    display: none;
+    background-color: rgb(0, 87, 14);
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    color: white;
+}
+
+
+
+
+.ind .title{
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.ind .indIcon{
+    width: 15%;
+    border-radius: 100%;
+    margin-left: 1vh;
+   
+}
+
+.ind .title span{
+    margin-left: 1vh;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intrabody{
+    height: 70%;
+    width: 100%;
+}
+
+.intrabody p{
+    margin: 1.2vh;
+    font-size: 1em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+@media screen and (max-width:1024px){
+    .ind{
+        width: 200px;
+        height: 133px;
+    }
+
+    .ind .title{
+        height: 30%;
+    }
+
+    .ind .title span{
+        font-size: 0.9em;
+    }
+
+    .ind .intrabody p{
+        margin: 1.2vh;
+        font-size: 0.7em;
+    }
+}
+
+/*IND CSS-----------------------------------------------------------------*/
+
+/*EMP CSS----------------------------------------------------------------------------------*/
+.emp{
+    display: none;
+    background-color: rgb(0, 87, 14);
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    color: white;
+}
+
+
+
+
+.emp .title{
+    display: flex;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.emp .empIcon{
+    width: 15%;
+    border-radius: 100%;
+    margin-left: 1vh;
+   
+}
+
+.emp .title span{
+    margin-left: 1vh;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intrabody{
+    height: 70%;
+    width: 100%;
+}
+
+.intrabody p{
+    margin: 1.2vh;
+    font-size: 1em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media screen and (max-width:1024px){
+    .emp{
+        width: 200px;
+        height: 133px;
+    }
+
+    .emp .title{
+        height: 30%;
+    }
+
+    .emp .title span{
+        font-size: 0.9em;
+    }
+
+    .emp .intrabody p{
+        margin: 1.2vh;
+        font-size: 0.9em;
+    }
+}
+
+/*EMP CSS----------------------------------------------------------------------------------*/
+
+
+/*VIDEO CONTAINER CSS--------------------------------------------------------------------------------*/
+.video-container{
+    display: flex;
+    background-image: url(../img/bg1.png);
+    
+}
+
+video{
+    margin: 25px;
+}
+
+.video-container .start{
+    width: 25%;
+}
+
+.inter{
+    width: 50%;
+}
+
+.text{
+    width: 45%;
+}
+
+.end{
+    width: 10%;
+}
+
+.text h1{
+    text-align: right;
+    margin-right: 0px;
+    margin-top: 70px;
+    color:rgb(18, 75, 1);
+}
+
+.subtext{
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    color: white;
+    justify-content: flex-end;
+    
+}
+
+.subtext h2{
+    text-align: right;
+}
+
+@media screen and (max-width:1024px){
+    video{
+        width: 512px;
+        height: 288px;
+    }
+
+    .video-container{
+        height: 331px;
+    }
+
+    .text h1{
+        margin-top: 20px;
+        font-size: 1.5em;
+    }
+}
+
+/*VIDEO CONTAINER CSS--------------------------------------------------------------------------------*/
+/*CONTATOS CONTAINER CSS ----------------------------------------------------------------*/
+.contatos-container{
+    display: flex;
+    background: rgb(178, 240, 166);
+    padding: 10px 0px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+
+.contatos-container h1{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.contatos-container h3{
+    margin-left: 50px;
+}
+
+
+
+.contatos-container a, .contatos-container h3 span{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width:1024px){
+    .contatos-container{
+        font-size: .8em;
+    }
+
+    iframe{
+        width: 307px;
+        height: 230px;
+    }
+}
+
+.contatos-container .start{
+    width: 25%;
+}
+
+.contatos-container .inter{
+    width: 30%;
+    display: inline-block;
+    
+   
+}
+
+.contatos-container .inter .btn-container{
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.map{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+ 
+
+
+.contatos-container .inter form{
+    display: none;
+    margin-left: 3000px;
+    overflow: hidden;
+    
+}
+
+.contatos-container .inter .notify-button{
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 3px;
+    color:#fff;
+	background-color:#964B00;
+    border: 0;
+    border-radius: 10px;
+	padding:10px 20px;
+	text-transform: uppercase;
+	margin-left: 50px;
+	border-radius:2px;
+	cursor:pointer;
+    box-shadow: inset 0px 0px 0 0 rgb(18, 75, 1);
+    transition: ease-in-out 0.5s;
+	
+}
+
+.contatos-container .inter .notify-button:hover{
+    box-shadow: inset -200px 0px 0px 0 rgb(18, 75, 1);
+    
+}
+
+
+.input-container{
+	position: relative;
+	margin-bottom:25px;
+    display: flex;
+    
+    
+}
+.input-container label{
+	position:absolute;
+    
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:rgb(0, 0, 0);	
+    margin-left: 50px;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:75%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:rgb(0, 0, 0);
+  margin-left: 50px;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #964B00;	
+}
+.btn{
+    width: 100px;
+    height: 50px;
+    align-items: center;
+	color:#fff;
+	background-color:#964B00;
+	outline: none;
+    border: 0;
+	text-transform:uppercase;
+	margin-left:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    box-shadow: inset 0px 0px 0 0 rgb(18, 75, 1);
+    transition: ease-in-out 0.5s;
+}
+
+.btn:hover{
+    box-shadow: inset -100px 0px 0 0 rgb(18, 75, 1);
+}
+
+.loading{
+    width: 35px;
+    animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin{
+    form{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+/*CONTATOS CONTAINER CSS ----------------------------------------------------------------*/
+/*FOOTER CSS ----------------------------------------------------------------*/
+footer{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: rgb(58, 0, 0);
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 2px;
+}
+
+footer img{
+    border-radius: 100%;
+    margin-left: 20px;
+}
+
+footer .tt-span{
+    
+    margin-left: 20px;
+}
+
+.partners{
+    width: 33%;
+}
+
+.copyright{
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
+
+footer .credit{
+    width: 33%;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+footer .end{
+    width: 10%;
+}
+
+.footerImg:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .credit a{
+    margin-left: 3px;
+    
+}
+
+footer .credit a:hover{
+    border-bottom: 5px solid rgb(178, 240, 166);
+    font-weight: bold;
+}
+
+/*FOOTER CSS ----------------------------------------------------------------*/
