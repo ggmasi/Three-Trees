@@ -34,7 +34,7 @@ const handleSubmit = (event) => {
     const email = document.querySelector('input[name=email]').value;
     const phone = document.querySelector('input[name=phone]').value;
 
-    fetch('https://api.sheetmonkey.io/form/psBfy6G6kj9zjP1hPKLc3Q', {
+    fetch('https://api.sheetmonkey.io/form/psBfy6G6kj9zjP1hPKLc3Q', {mode: 'no-cors'} {
         method: 'post',
         headers:{
             'Accept': 'application/json',
